@@ -1,15 +1,17 @@
-<%= form_tag scope: :article, url: articles_path, local: true do |form| %>
+<h1>Create an Article</h1>
+
+<%= form_for @article do |f| %>
   <p>
-    <%= label_tag :title %><br>
-    <%= text_field_tag :title %>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
   </p>
 
-  <p>
-    <%= label_tag :text %><br>
-    <%= text_area_tag :text %>
-  </p>
 
-  <p>
-    <%= submit_tag %>
-  </p>
-<<% end -%>
+<% end %>
